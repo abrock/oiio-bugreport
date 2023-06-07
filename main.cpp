@@ -22,7 +22,7 @@ int main(int argc, char ** argv) {
     bool const read_success = in.read();
     println("oiio size: [{}, {}], nchannels: {}, channel_bytes:{}", in.spec().width, in.spec().height, in.spec().nchannels, in.spec().channel_bytes());
     println("Read success: {}", read_success);
-    cv::Mat result;
+    cv::Mat result(in.spec().height, in.spec().width, CV_8UC1);
     println("Converting image {} to cv::Mat", fn);
     ImageBufAlgo::to_OpenCV(result, in);
     println("Size: [{}, {}]", result.cols, result.rows);
