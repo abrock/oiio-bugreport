@@ -6,6 +6,6 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 add_executable(bugreport main.cpp)
 
 target_link_libraries(bugreport
-    ${OpenCV_LIBRARIES}
+    opencv_core
     OpenImageIO
     )
